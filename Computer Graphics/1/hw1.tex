@@ -27,6 +27,7 @@
 \usepackage{graphicx} % Required to insert images
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 \usepackage{amsmath}
+\usepackage{hyperref}
 
 % Margins
 \topmargin=-0.45in
@@ -223,11 +224,11 @@
                 \begin{vmatrix}
                     i & j & k\\
                     -1 & 0 & 0\\
-                    5 & 5 & 9\\
+                    -3 & -1 & 1\\
                 \end{vmatrix}\\
-                &= (0, 9, -5)\\
-               &0(x-3) + 9(y-2) - 5(z-0)\\
-               &9y-5z-18 = 0\\
+                &= (0, 1, 1)\\
+               &0(x-3) + 1(y-2) + 1(z-0)\\
+               &y+z-2 = 0\\
             \end{align*}
         }
     \end{homeworkSection}
@@ -238,7 +239,16 @@
         Consider the line L thru the points O(0,0,0) and P(1,1,1). Where does this line intersect the plane?\vspace{10pt}
 
         \problemAnswer{ % Answer
-        \lipsum[6]
+            \begin{align*}
+                P_x(t) &= 1 * t\\
+                P_y(t) &= 1 * t\\
+                P_z(t) &= 1 * t\\
+                \text{Substitution: }\\
+                (t) + (t) - 2 &= 0\\
+                t &= 1\\
+                \text{Intersection: }\\
+                P_i &= (1, 1, 1)\\
+            \end{align*}
         }
     \end{homeworkSection}
 
@@ -255,7 +265,9 @@
     Modify the program in http://www.cs.unm.edu/~angel/WebGL/7E/CLASS/square.html , which calls several other files, to display shapes that are the first initials of the last names of the team members.\vspace{10pt}
 
     \problemAnswer{ % Answer
-        <INSERT ANSWER LOCATION>
+        The solution for this homework can be seen at: \url{https://www.rpi.edu/~STUDENT/homeworks/hw1/initial.html}\\
+        Changes were made mostly to square.js, and it was renamed initial.js, so the square.html file had to be changed to reference the new file, and was also updated to match the naming scheme.
+        
     }
 \end{homeworkProblem}
 
@@ -297,10 +309,11 @@
     \begin{homeworkSection}{(a)}
         640 x 480 pixels at 60Hz Interlaced\\
         \problemAnswer{
+            Interlaced video works with the same horizontal resolution, but at an effective half vertical resolution. The calculation then becomes:
             \begin{align*}
-                1280 \text{pixels} \times 1024 \text{pixels} \times 24 \frac{\text{bits}}{\text{pixel}} &= 31457280 \text{ bits }\\
-                31457280 \text{ bits } * 72 \text{sec}^{-1} &= 2264924160 \frac{\text{bits}}{\text{sec}}\\
-                &= 2160 \frac{\text{Mib}}{\text{sec}}\\
+                640 \text{pixels} \times 240 \text{pixels} \times 24 \frac{\text{bits}}{\text{pixel}} &= 3686400 \text{ bits }\\
+                3686400 \text{ bits } * 60 \text{sec}^{-1} &= 221184000 \frac{\text{bits}}{\text{sec}}\\
+                &\approx 211 \frac{\text{Mib}}{\text{sec}}\\
             \end{align*}
         }
     \end{homeworkSection}
