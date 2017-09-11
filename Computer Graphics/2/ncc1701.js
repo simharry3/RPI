@@ -9,9 +9,26 @@ var program;
 var vertices = [
     vec2( -0.75, .15 ),
     vec2(  -0.75,  0.75 ),
-    vec2(  0, 0.75 ),
-    vec2( 0, .15)
+    vec2(  0, 0.75 )
 ];
+
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+}
 
 
 window.onload = function init()
@@ -23,7 +40,7 @@ window.onload = function init()
     var w = window.File && window.FileReader && window.FileList && window.Blob;
     if  ( !w ) {alert( "File API Not Supported" );}
 
-    
+    readTextFile("file:///home/quaczar/Documents/RPI/Computer Graphics/2/ncc1701b.data");
     
     
 
@@ -44,13 +61,6 @@ window.onload = function init()
      gl.bindBuffer( gl.ARRAY_BUFFER, bufferId );
      gl.bufferData( gl.ARRAY_BUFFER, flatten(vertices), gl.STATIC_DRAW );
 
-    
- 
-     // Associate out shader variables with our data buffer
-     
-    //  var vPosition = gl.getAttribLocation( program, "vPosition" );
-    //  gl.vertexAttribPointer( vPosition, 2, gl.FLOAT, false, 0, 0 );
-    //  gl.enableVertexAttribArray( vPosition );
  
      render();
 };
@@ -63,7 +73,7 @@ function render() {
     vPosition = gl.getAttribLocation( program, "vPosition" );
     gl.vertexAttribPointer( vPosition, 2, gl.FLOAT, false, 0, 0 );
     gl.enableVertexAttribArray( vPosition );
-    gl.drawArrays( gl.TRIANGLE_FAN, 0, 4 );
+    gl.drawArrays( gl.TRIANGLE_FAN, 0, 3 );
 
 }
 
