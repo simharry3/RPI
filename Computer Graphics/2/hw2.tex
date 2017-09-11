@@ -99,8 +99,8 @@
 %	NAME AND CLASS SECTION
 %----------------------------------------------------------------------------------------
 
-\newcommand{\hmwkTitle}{Assignment\ \#1} % Assignment title
-\newcommand{\hmwkDueDate}{Monday,\ September\ 7,\ 2017} % Due date
+\newcommand{\hmwkTitle}{Assignment\ \#2} % Assignment title
+\newcommand{\hmwkDueDate}{Monday,\ September\ 18,\ 2017} % Due date
 \newcommand{\hmwkClass}{CSCI\ 6964} % Course/class
 \newcommand{\hmwkClassTime}{4:00pm} % Class/lecture time
 \newcommand{\hmwkClassInstructor}{Franklin} % Teacher/lecturer
@@ -143,11 +143,9 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    One graphics pioneer was Ivan Sutherland. Name an influential tool that he created and an influential algorithm that he helped create.\vspace{10pt} % Question
-    
+    Which RPI grad was the technical person in the founding group of NVidia?\\~\\
     \problemAnswer{ % Answer
-        % \includegraphics[width=0.75\columnwidth]{example_figure} % Example image
-        Ivan Sutherland was responsible for the creation of Sketchpad, which was an early predecessor to GUIs as we know them today. Sketchpad contained an algorithm developed by Ivan Sutherland which allowed for efficient calculation of clipping between objects.
+        Curtis Priem was an Electrical Engineering major at RPI in 1982, and co-founded NVidia with Jen-Hsun Huang and Chris Malachowsky in 1993.
     }
 
 \end{homeworkProblem}
@@ -157,51 +155,13 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem} % Custom section title
-    Consider these 3-D vectors: A=(0,4,2), B=(1,2,3), C=(8,7,9). Compute:\vspace{10pt}
+    What hardware component had to get much cheaper in order to make frame buffers possible?\\~\\
 
     %--------------------------------------------
-
-    \begin{homeworkSection}{(a)} % Section within problem
-        $A \cdot (B \times C)$\vspace{10pt} % Question
-
-        \problemAnswer{ % Answer
-            \begin{align*}
-                B \times C &= (1, 2, 3) \times (8, 7, 9)\\
-                &=\begin{vmatrix}
-                    i & j & k\\
-                    1 & 2 & 3\\
-                    8 & 7 & 9\\
-                \end{vmatrix}\\
-                &= (-3, 15, -9)\\
-                A \cdot (B \times C) &= (0, 4, 2) \cdot (-3, 15, -9)\\
-                &= 0 + 60 - 18\\
-                &= 42\\
-            \end{align*}
-        }
-    \end{homeworkSection}
-
+    \problemAnswer{
+        RAM had to get much cheaper before framebuffers were feasable. At the time (1974), due to expensive memory, the first commercial framebuffer cost around \$15,000, and only suppored resolutions up to 512x512 in 8-bit greyscale.
+    }
     %--------------------------------------------
-
-    \begin{homeworkSection}{(b)} % Section within problem
-        $(A \times B) \cdot C$\vspace{10pt}
-
-        \problemAnswer{ % Answer
-            \begin{align*}
-                A \times B &= (0, 4, 2) \times (1, 2, 3)\\
-                &=\begin{vmatrix}
-                    i & j & k\\
-                    0 & 4 & 2\\
-                    1 & 2 & 3\\
-                \end{vmatrix}\\
-                &= (8, 2, -4)\\
-                (A \times B) \cdot C &= (8, 2, -4) \cdot (8, 7, 9)\\
-                &= 64 + 14 - 36\\
-                &= 42\\
-            \end{align*}
-        }
-    \end{homeworkSection}
-
-%--------------------------------------------
 
 \end{homeworkProblem}
 
@@ -210,48 +170,12 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem} % Custom section title
-    Suppose that we have a plane in 3-D through the points A(3,2,0), B(2,2,0), and C(0,1,1).\vspace{10pt}
+    The process of computer graphics has always been enabled by new hardware. One newish toy is Google Cardboard. Pretend that I've never heard of it, and write 100 words or so summarizing it and giving specific details.\\
 
     %--------------------------------------------
-
-    \begin{homeworkSection}{(a)} % Section within problem
-        What is its equation, in the form $ax+by+cz+d=0$?\vspace{10pt} % Question
-
-        \problemAnswer{ % Answer
-            \begin{align*}
-                \hat{n} &= AB \times AC\\
-               AB \times AC &=
-                \begin{vmatrix}
-                    i & j & k\\
-                    -1 & 0 & 0\\
-                    -3 & -1 & 1\\
-                \end{vmatrix}\\
-                &= (0, 1, 1)\\
-               &0(x-3) + 1(y-2) + 1(z-0)\\
-               &y+z-2 = 0\\
-            \end{align*}
-        }
-    \end{homeworkSection}
-
-    %--------------------------------------------
-
-    \begin{homeworkSection}{(b)} % Section within problem
-        Consider the line L thru the points O(0,0,0) and P(1,1,1). Where does this line intersect the plane?\vspace{10pt}
-
-        \problemAnswer{ % Answer
-            \begin{align*}
-                P_x(t) &= 1 * t\\
-                P_y(t) &= 1 * t\\
-                P_z(t) &= 1 * t\\
-                \text{Substitution: }\\
-                (t) + (t) - 2 &= 0\\
-                t &= 1\\
-                \text{Intersection: }\\
-                P_i &= (1, 1, 1)\\
-            \end{align*}
-        }
-    \end{homeworkSection}
-
+   \problemAnswer{
+    Google Cardboard is an open-source VR platform, which is supported by most Android and iOS phones. The actual viewer itself can be constructed extremely cheaply using common materials, or can be purchased from several manufacturers since the specifications are open-source. Once the head unit is constructed, the user's phone can be placed inside the viewer. The screen will be partitioned into two parts, each one being viewed by the right or left eye to give the illusion of stereoscopic vision. With gyro/accelerometer head tracking, a user can experience immersion as the scene will be updated based on head position.
+   }
     %--------------------------------------------
 
 \end{homeworkProblem}
@@ -262,12 +186,9 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-    Modify the program in http://www.cs.unm.edu/~angel/WebGL/7E/CLASS/square.html , which calls several other files, to display shapes that are the first initials of the last names of the team members.\vspace{10pt}
+    Modify last week's program to display the spaceship NCC1701 using the vertex data file given by \url{https://wrf.ecse.rpi.edu/Teaching/graphics-f2017/files/ncc1701b.data}.\\
 
-    \problemAnswer{ % Answer
-        The solution for this homework can be seen at: \url{https://www.rpi.edu/~raymec/homeworks/hw1/initial.html}\\
-        Changes were made mostly to square.js, and it was renamed initial.js, so the square.html file had to be changed to reference the new file, and was also updated to match the naming scheme.
-        
+    \problemAnswer{ % Answer        
     }
 \end{homeworkProblem}
 
@@ -278,10 +199,10 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-    Do exercise 1.1 from the textbook, page 37.\vspace{10pt}
+    In real life, light bounces from object to object, on its way from the light source to the viewer. However the OpenGL pipeline processes objects independently, and does not allow that (except that an object can hide another object). Why?
     
     \problemAnswer{ % Answer
-        The main advantage to using the non-physical graphics pipeline approach is to improve speed of calculation, making image display to the user real-time. The main disadvantage to this, however is that this requires special hardware, which is more complicated than non-pipelined hardware.
+        The calculation of light reflections between objects is called raytracing. Raytracing is an extremely expensive operation, and with the resources available to OpenGL, it becomes impossible to do such raytracing while keeping the scene in realtime.
     }
 \end{homeworkProblem}
     
@@ -293,28 +214,24 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-    Do exercise 1.8 from the textbook, page 38.\vspace{10pt}
+    According to the tristimulus model, our eyes have three types of color receptors (cones). However several species and some rare human females have four types of cones. They are called tetrachromats.
 
     \begin{homeworkSection}{(a)}
-        1280 x 1024 pixels at 72Hz\\
+        Name some such animals.\\
         \problemAnswer{
-            \begin{align*}
-                1280 \text{pixels} \times 1024 \text{pixels} \times 24 \frac{\text{bits}}{\text{pixel}} &= 31457280 \text{ bits }\\
-                31457280 \text{ bits } * 72 \text{sec}^{-1} &= 2264924160 \frac{\text{bits}}{\text{sec}}\\
-                &= 2160 \frac{\text{Mib}}{\text{sec}}\\
-            \end{align*}
+            \begin{itemize}
+                \item Reindeer
+                \item Zebra Finch
+                \item Goldfish
+                \item Bonus: Mantis Shrimp (16 cone pigments!)
+            \end{itemize}
         }
     \end{homeworkSection}
 
     \begin{homeworkSection}{(a)}
-        640 x 480 pixels at 60Hz Interlaced\\
+        For humans, why is it (probably; opinions differ) only females?\\
         \problemAnswer{
-            Interlaced video works with the same horizontal resolution, but at an effective half vertical resolution. The calculation then becomes:
-            \begin{align*}
-                640 \text{pixels} \times 240 \text{pixels} \times 24 \frac{\text{bits}}{\text{pixel}} &= 3686400 \text{ bits }\\
-                3686400 \text{ bits } * 60 \text{sec}^{-1} &= 221184000 \frac{\text{bits}}{\text{sec}}\\
-                &\approx 211 \frac{\text{Mib}}{\text{sec}}\\
-            \end{align*}
+            One possible explanation is that two cone cell pigment genes are on the X chromosome, so women (who have two x-chromosomes) could possibly recieve 4 different pigment types.\\
         }
     \end{homeworkSection}
 \end{homeworkProblem}
