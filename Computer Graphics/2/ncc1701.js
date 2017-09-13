@@ -1,16 +1,15 @@
 
 var gl;
 var points;
-var bufferId;
+var bufferId = [];
 var vPosition;
 var program;
+var allText;
+var lines;
+var coordinates;
 
 
-var vertices = [
-    vec2( -0.75, .15 ),
-    vec2(  -0.75,  0.75 ),
-    vec2(  0, 0.75 )
-];
+var vertices = [];
 
 function readTextFile(file)
 {
@@ -22,8 +21,20 @@ function readTextFile(file)
         {
             if(rawFile.status === 200 || rawFile.status == 0)
             {
-                var allText = rawFile.responseText;
-                alert(allText);
+                allText = rawFile.responseText;
+                lines = allText.split("\n");
+                var numLines = 1;
+                for(count = 0; count < numLines; ++count){
+                    coordinates = lines[count].split(" ");
+                    for(i = 0; i < 3; ++i){
+                        vertices.push(vec3(coordinates[i*3]/3, coordinates[i*3 + 1]/3, coordinates[i*3 + 2]/3));
+                    }
+                    bufferId.push(gl.createBuffer());
+                    gl.bindBuffer( gl.ARRAY_BUFFER, bufferId[count] );
+                    gl.bufferData( gl.ARRAY_BUFFER, flatten(vertices[count]), gl.STATIC_DRAW );
+                }
+                render(numLines);
+                
             }
         }
     }
@@ -40,9 +51,6 @@ window.onload = function init()
     var w = window.File && window.FileReader && window.FileList && window.Blob;
     if  ( !w ) {alert( "File API Not Supported" );}
 
-    readTextFile("file:///home/quaczar/Documents/RPI/Computer Graphics/2/ncc1701b.data");
-    
-    
 
     //
     //  Configure WebGL
@@ -54,26 +62,23 @@ window.onload = function init()
     
      program = initShaders( gl, "vertex-shader", "fragment-shader" );
      gl.useProgram( program );
-     
-     // Load the data into the GPU
-     
-     bufferId = gl.createBuffer();
-     gl.bindBuffer( gl.ARRAY_BUFFER, bufferId );
-     gl.bufferData( gl.ARRAY_BUFFER, flatten(vertices), gl.STATIC_DRAW );
 
- 
-     render();
+    readTextFile("file:///home/quaczar/Documents/RPI/Computer Graphics/2/ncc1701b.data");
+    
 };
 
 
-function render() {
+function render(num) {
     gl.clear( gl.COLOR_BUFFER_BIT );
 
-    gl.bindBuffer( gl.ARRAY_BUFFER, bufferId);
-    vPosition = gl.getAttribLocation( program, "vPosition" );
-    gl.vertexAttribPointer( vPosition, 2, gl.FLOAT, false, 0, 0 );
-    gl.enableVertexAttribArray( vPosition );
-    gl.drawArrays( gl.TRIANGLE_FAN, 0, 3 );
+    for(i = 0; i < num; ++i){
+        gl.bindBuffer( gl.ARRAY_BUFFER, bufferId[i]);
+        alert(bufferId[i]);
+        vPosition = gl.getAttribLocation( program, "vPosition" );
+        gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
+        gl.enableVertexAttribArray( vPosition );
+        gl.drawArrays( gl.TRIANGLE_FAN, 0, 3 );
+    }
 
 }
 
