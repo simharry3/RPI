@@ -2,7 +2,7 @@
 var gl;
 var points;
 var bufferId = [];
-var vPosition;
+var vPosition = [];
 var program;
 var allText;
 var lines;
@@ -23,15 +23,18 @@ function readTextFile(file)
             {
                 allText = rawFile.responseText;
                 lines = allText.split("\n");
-                var numLines = 1;
+                var numLines = lines.length;
+                var scaleFactor = 5;
+                // alert(allText);
                 for(count = 0; count < numLines; ++count){
                     coordinates = lines[count].split(" ");
                     for(i = 0; i < 3; ++i){
-                        vertices.push(vec3(coordinates[i*3]/3, coordinates[i*3 + 1]/3, coordinates[i*3 + 2]/3));
+                        vertices.push(vec3(coordinates[i*3]/scaleFactor, coordinates[i*3 + 1]/scaleFactor, coordinates[i*3 + 2]/scaleFactor));
                     }
                     bufferId.push(gl.createBuffer());
                     gl.bindBuffer( gl.ARRAY_BUFFER, bufferId[count] );
-                    gl.bufferData( gl.ARRAY_BUFFER, flatten(vertices[count]), gl.STATIC_DRAW );
+                    gl.bufferData( gl.ARRAY_BUFFER, flatten(vertices), gl.STATIC_DRAW );
+                    vertices = [];
                 }
                 render(numLines);
                 
@@ -63,7 +66,7 @@ window.onload = function init()
      program = initShaders( gl, "vertex-shader", "fragment-shader" );
      gl.useProgram( program );
 
-    readTextFile("file:///home/quaczar/Documents/RPI/Computer Graphics/2/ncc1701b.data");
+    readTextFile("./ncc1701b.data");
     
 };
 
@@ -73,9 +76,8 @@ function render(num) {
 
     for(i = 0; i < num; ++i){
         gl.bindBuffer( gl.ARRAY_BUFFER, bufferId[i]);
-        alert(bufferId[i]);
-        vPosition = gl.getAttribLocation( program, "vPosition" );
-        gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
+        vPosition.push(gl.getAttribLocation( program, "vPosition" ));
+        gl.vertexAttribPointer( vPosition[i], 3, gl.FLOAT, false, 0, 0 );
         gl.enableVertexAttribArray( vPosition );
         gl.drawArrays( gl.TRIANGLE_FAN, 0, 3 );
     }
