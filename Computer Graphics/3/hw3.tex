@@ -99,8 +99,8 @@
 %	NAME AND CLASS SECTION
 %----------------------------------------------------------------------------------------
 
-\newcommand{\hmwkTitle}{Assignment\ \#2} % Assignment title
-\newcommand{\hmwkDueDate}{Monday,\ September\ 18,\ 2017} % Due date
+\newcommand{\hmwkTitle}{Assignment\ \#3} % Assignment title
+\newcommand{\hmwkDueDate}{Monday,\ September\ 25,\ 2017} % Due date
 \newcommand{\hmwkClass}{CSCI\ 6964} % Course/class
 \newcommand{\hmwkClassTime}{4:00pm} % Class/lecture time
 \newcommand{\hmwkClassInstructor}{Franklin} % Teacher/lecturer
@@ -143,9 +143,25 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    Which RPI grad was the technical person in the founding group of NVidia?\\~\\
+    Part of changing from one coordinate system to another is scaling and making things fit. E.g., suppose that you had a square with lower left corner (llc) (0,0) and upper right corner (urc) (1,1). You want to scale and center it to just fit into a rectangle with llc (0,0) and urc (2,3). The square stays a square but is probably larger or smaller. Then, these equations would do it:
+    \begin{align*}
+        x' &= 2x\\
+        y' &= 2y + 1/2
+    \end{align*}
+    This question is to figure out how to make a rectangle from (0,0) to (2,3) fit into a square that is from (0,0) to (10,9).\\
     \problemAnswer{ % Answer
-        Curtis Priem was an Electrical Engineering major at RPI in 1982, and co-founded NVidia with Jen-Hsun Huang and Chris Malachowsky in 1993.
+        We see that the limiting scale factor of this rectangle is the Y-Axis. Scaling the rectangle by 3 gives us:
+        \begin{align*}
+            x' &= 3x\\
+            y' &= 3y
+            RECT &= (0,0), (6,9)
+        \end{align*}
+        Now we need to align the rectangle to the center of the bounding box:
+        \begin{align*}
+            x' &= 3x + 2
+            y' &= 3y
+            RECT &= (2, 0), (8, 9)
+        \end{align*}
     }
 
 \end{homeworkProblem}
@@ -155,11 +171,10 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem} % Custom section title
-    What hardware component had to get much cheaper in order to make frame buffers possible?\\~\\
-
+    Consider a pinhole camera as discussed in slide 12 of ppt presentation 1-5. Let d=2. To where does the point (1,3,-3) project? Use the equation on that slide. x/z/d should be parenthesized as x/(z/d).\\
     %--------------------------------------------
     \problemAnswer{
-        RAM had to get much cheaper before framebuffers were feasable. At the time (1974), due to expensive memory, the first commercial framebuffer cost around \$15,000, and only suppored resolutions up to 512x512 in 8-bit greyscale.
+
     }
     %--------------------------------------------
 
@@ -170,11 +185,11 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem} % Custom section title
-    The process of computer graphics has always been enabled by new hardware. One newish toy is Google Cardboard. Pretend that I've never heard of it, and write 100 words or so summarizing it and giving specific details.\\
+    If your image has only 64 different colors across the whole image, how many bits per pixel do you need for the color buffer?\\
 
     %--------------------------------------------
    \problemAnswer{
-    Google Cardboard is an open-source VR platform, which is supported by most Android and iOS phones. The actual viewer itself can be constructed extremely cheaply using common materials, or can be purchased from several manufacturers since the specifications are open-source. Once the head unit is constructed, the user's phone can be placed inside the viewer. The screen will be partitioned into two parts, each one being viewed by the right or left eye to give the illusion of stereoscopic vision. With gyro/accelerometer head tracking, a user can experience immersion as the scene will be updated based on head position.
+    
    }
     %--------------------------------------------
 
@@ -186,57 +201,16 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-    Modify last week's program to display the spaceship NCC1701 using the vertex data file given by \url{https://wrf.ecse.rpi.edu/Teaching/graphics-f2017/files/ncc1701b.data}.\\
+    Extend your program from last week that displays the Starship Enterprise as follows:
+    \begin{enumerate}
+        \item Add 3 sliders that will rotate it around the X-axis, Y-axis, and Z-axis respectively.
+        \item Do the rotations the simplest (and least efficient) way. I.e., in your javascript program, have render rotate the matrix and resend it to the GPU.\\
+    \end{enumerate}
 
     \problemAnswer{ % Answer   
-        The resulting graphics can be found at: \url{https://homepages.rpi.edu/~raymec/homeworks/hw2/ncc1701.html}. Changes were made mostly to the ncc1701.js file which is located in the hw2 directory. Code was added to make an array of buffers, which the vertices are added to after being read to from a file. After all vertices are read, then the system is rendered. Lines can be added or removed from the source file without impacting the operation of the code.\\    
+
     }
 \end{homeworkProblem}
-
-%----------------------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------------------
-%	PROBLEM 5
-%----------------------------------------------------------------------------------------
-
-\begin{homeworkProblem}
-    In real life, light bounces from object to object, on its way from the light source to the viewer. However the OpenGL pipeline processes objects independently, and does not allow that (except that an object can hide another object). Why?
-    
-    \problemAnswer{ % Answer
-        The calculation of light reflections between objects is called raytracing. Raytracing is an extremely expensive operation, and with the resources available to OpenGL, it becomes impossible to do such raytracing while keeping the scene in realtime.
-    }
-\end{homeworkProblem}
-    
-%----------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-%	PROBLEM 6
-%----------------------------------------------------------------------------------------
-
-\begin{homeworkProblem}
-    According to the tristimulus model, our eyes have three types of color receptors (cones). However several species and some rare human females have four types of cones. They are called tetrachromats.
-
-    \begin{homeworkSection}{(a)}
-        Name some such animals.\\
-        \problemAnswer{
-            \begin{itemize}
-                \item Reindeer
-                \item Zebra Finch
-                \item Goldfish
-                \item Bonus: Mantis Shrimp (16 cone pigments!)
-            \end{itemize}
-        }
-    \end{homeworkSection}
-
-    \begin{homeworkSection}{(a)}
-        For humans, why is it (probably; opinions differ) only females?\\
-        \problemAnswer{
-            One possible explanation is that two cone cell pigment genes are on the X chromosome, so women (who have two x-chromosomes) could possibly recieve 4 different pigment types.\\
-        }
-    \end{homeworkSection}
-\end{homeworkProblem}
-    
-%----------------------------------------------------------------------------------------
-
 \end{document}
+
+%----------------------------------------------------------------------------------------
