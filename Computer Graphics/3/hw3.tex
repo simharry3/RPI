@@ -153,13 +153,13 @@
         We see that the limiting scale factor of this rectangle is the Y-Axis. Scaling the rectangle by 3 gives us:
         \begin{align*}
             x' &= 3x\\
-            y' &= 3y
+            y' &= 3y\\
             RECT &= (0,0), (6,9)
         \end{align*}
         Now we need to align the rectangle to the center of the bounding box:
         \begin{align*}
-            x' &= 3x + 2
-            y' &= 3y
+            x' &= 3x + 2\\
+            y' &= 3y\\
             RECT &= (2, 0), (8, 9)
         \end{align*}
     }
@@ -189,7 +189,10 @@
 
     %--------------------------------------------
    \problemAnswer{
-    
+    Since you only need 64 distinct values, this can be provided with 6 bits per pixel:
+    \begin{align*}
+        log_2(64) = 6
+    \end{align*}
    }
     %--------------------------------------------
 
