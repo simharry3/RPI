@@ -2,11 +2,18 @@
 var gl;
 var points;
 var bufferId = [];
-var vPosition = [];
+// var vPosition = [];
 var program;
 var allText;
 var lines;
 var coordinates;
+var numLines;
+
+var Rotation= [0,0,0];
+
+var xAddr;
+var yAddr;
+var zAddr;
 
 
 var vertices = [];
@@ -23,7 +30,7 @@ function readTextFile(file)
             {
                 allText = rawFile.responseText;
                 lines = allText.split("\n");
-                var numLines = lines.length;
+                numLines = lines.length;
                 var scaleFactor = 5;
                 // alert(allText);
                 for(count = 0; count < numLines; ++count){
@@ -35,10 +42,9 @@ function readTextFile(file)
                     gl.bindBuffer( gl.ARRAY_BUFFER, bufferId[count] );
                     gl.bufferData( gl.ARRAY_BUFFER, flatten(vertices), gl.STATIC_DRAW );
                     vertices = [];
-                }
-                render(numLines);
-                
+                }                
             }
+            render(numLines);
         }
     }
     rawFile.send(null);
@@ -67,17 +73,34 @@ window.onload = function init()
      gl.useProgram( program );
 
     readTextFile("./ncc1701b.data");
+    document.getElementById("xRotation").onchange = function(event){
+        Rotation[0] = event.target.value;
+        render(numLines);
+    };
+    document.getElementById("yRotation").onchange = function(event){
+        Rotation[1] = event.target.value;
+        render(numLines);
+    };
+    document.getElementById("zRotation").onchange = function(event){
+        Rotation[2] = event.target.value;
+        render(numLines);
+    };
+
+
+    rotAddr = gl.getUniformLocation(program, "rotation_var");
     
 };
 
 
 function render(num) {
     gl.clear( gl.COLOR_BUFFER_BIT );
+    gl.uniform4f(rotAddr, Rotation[0], Rotation[1], Rotation[2], 0);
 
     for(i = 0; i < num; ++i){
         gl.bindBuffer( gl.ARRAY_BUFFER, bufferId[i]);
-        vPosition.push(gl.getAttribLocation( program, "vPosition" ));
-        gl.vertexAttribPointer( vPosition[i], 3, gl.FLOAT, false, 0, 0 );
+        // vPosition.push(gl.getAttribLocation( program, "vPosition" ));
+        var vPosition = gl.getAttribLocation(program, "vPosition");
+        gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
         gl.enableVertexAttribArray( vPosition );
         gl.drawArrays( gl.TRIANGLE_FAN, 0, 3 );
     }
