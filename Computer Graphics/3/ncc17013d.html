@@ -10,15 +10,17 @@ main()
 {
     gl_Position = vPosition;
 
-    gl_Position.x = vPosition.x*cos(rotation_var.z) - vPosition.y*sin(rotation_var.z);
-    gl_Position.y = vPosition.x*sin(rotation_var.z) + vPosition.y*cos(rotation_var.z);
-
-    gl_Position.z = vPosition.z*cos(rotation_var.y) - vPosition.x*sin(rotation_var.y);
-    gl_Position.x = vPosition.z*cos(rotation_var.y) + vPosition.x*cos(rotation_var.y);
-
-    gl_Position.y = vPosition.y*cos(rotation_var.x) - vPosition.z*sin(rotation_var.x);
-    gl_Position.z = vPosition.y*sin(rotation_var.x) + vPosition.z*cos(rotation_var.x);
-
+    gl_Position.x = cos(rotation_var.z)*cos(rotation_var.y)*vPosition.x +
+                    cos(rotation_var.y)*sin(rotation_var.z)*vPosition.y -
+                    sin(rotation_var.y)*vPosition.z;
+    
+    gl_Position.y = (cos(rotation_var.z)*sin(rotation_var.x)*sin(rotation_var.y) - cos(rotation_var.x)*sin(rotation_var.z))*vPosition.x +
+                    (cos(rotation_var.x)*cos(rotation_var.z) + sin(rotation_var.x)*sin(rotation_var.z)*sin(rotation_var.y))*vPosition.y +
+                    (cos(rotation_var.y)*sin(rotation_var.x))*vPosition.z;
+    
+    gl_Position.z = (sin(rotation_var.x)*sin(rotation_var.z) + cos(rotation_var.x)*cos(rotation_var.z)*sin(rotation_var.y))*vPosition.x +
+                    (cos(rotation_var.x)*sin(rotation_var.z)*sin(rotation_var.y) - cos(rotation_var.z)*sin(rotation_var.x))*vPosition.y +
+                    (cos(rotation_var.x)*cos(rotation_var.y))*vPosition.z;
 
 }
 </script>
