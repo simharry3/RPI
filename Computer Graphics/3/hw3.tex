@@ -174,12 +174,11 @@
     Consider a pinhole camera as discussed in slide 12 of ppt presentation 1-5. Let d=2. To where does the point (1,3,-3) project? Use the equation on that slide. x/z/d should be parenthesized as x/(z/d).\\
     %--------------------------------------------
     \problemAnswer{
-        We use the following relations given to us in slide 12 of presentation 1_5:\\
+        We use the following relations given to us in slide 12 of presentation 1-5:\\
         \begin{align*}
             x_p &= \frac{-x}{z/d}\\
             y_p &= \frac{-y}{z/d}\\
-            z_p &= d\\
-            
+            z_p &= d\\  
         \end{align*}
         Substituting our values for the numbers in the relation we find the following:
         \begin{align*}
@@ -207,7 +206,7 @@
    \problemAnswer{
     Since you only need 64 distinct values, this can be provided with 6 bits per pixel:
     \begin{align*}
-        log_2(64) = 6
+        log_2(64) = 6\\
     \end{align*}
    }
     %--------------------------------------------
@@ -225,10 +224,9 @@
         \item Add 3 sliders that will rotate it around the X-axis, Y-axis, and Z-axis respectively.
         \item Do the rotations the simplest (and least efficient) way. I.e., in your javascript program, have render rotate the matrix and resend it to the GPU.\\
     \end{enumerate}
-
     \problemAnswer{ % Answer   
         The solution to this week's programming problem can be found at the following URL:\\
-        \url{www.someshit.com}\\
+        \url{http://homepages.rpi.edu/~raymec/homeworks/hw3/ncc17013d.html}\\
         The main changes to the program this week were in the vertex shader to rotate the vertices, and in the HTML file to add sliders to the page. The javascript file was updated in order to get the values from the sliders and pass them to the vertex shader.
     }
 \end{homeworkProblem}
