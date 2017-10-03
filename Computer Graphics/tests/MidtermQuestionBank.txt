@@ -1,0 +1,180 @@
+NAME: _________________________________ EMAIL:_________________________ RIN:______________
+
+
+
+There are six pages with 25 questions, each worth 2 points. Answer every question but 2. You may write FREE as the answer for two questions (and get the 2 points each).
+
+This exam is closed book: you may use calculators and one 2-sided letter-size note sheet that you brought with you. You may not use computers or communication devices, or share material with other students.
+
+  
+  
+
+    01. _____/(2 points) What display technology uses the fact that you see color with less precision than you see brightness?
+
+    02. _____/2 Processing objects 1-by-1 with a graphics pipeline has a major advantage and also a major disadvantage. Name them.
+
+    03. _____/2 You call gl.BufferSubData to do what?
+
+    04. _____/2 Why does OpenGL contain primitives, like triangle fans, that are not necessary (since you could draw the triangles separately)?
+
+    05. _____/2 Why do we consider color to have three dimensions, such as RGB? There are an infinite number of visible wavelengths.
+
+    06. _____/2 What is the event loop?
+
+    07. _____/2 Use the vector formulation or your intuition to rotate the point (0,0,2) by 180 degrees about the axis (1,0,0).
+
+    08. ____/2 You see the expression flatten(points) often in Javascript programs. What does flatten do?
+
+    09. ____/2 What feature in OpenGL is used to display the closest object when several objects overlap the same pixel?
+
+    10. ____/2 What's the point of using two color buffers, one to draw into, while the other is being displayed?
+
+    11. ____/2 Give the 4x4 homogeneous 3D matrix for a uniform scale by a factor of 2 followed by a translation by (0,0,3).
+
+    12. _____/2 What's the quaternion representing a rotation of 360 degrees about the axis (1,0,0)?
+
+    13. _____/2 What does this statement do? gl.uniform1f(thetaLoc, theta); Also say what theta and thetaLoc are.
+
+    14. _____/2 When rendering a triangle, you are given various properties at each vertex, and then need to interpolate them at each pixel inside the triangle. One such property is position. Name two other properties.
+
+    15. _____/2 Here is a 3D homogeneous point: (1,2,3,1). What Cartesian point does it correspond to?
+
+    16. _____/2 In shaders, what is a uniform variable?
+
+    17. _____/2 What are the four major components of the OpenGl model as discussed in class?
+
+    18. _____/2 When using a pipeline to clip a 3D object, how many stages can be used?
+
+    19. _____/2 For the default OpenGL camera, where is it and in what direction does it look?
+
+    20. _____/2 What is the use of the CIE chromaticity diagram?
+
+    21. _____/2 If i and j are quaternions, simplify i+j as much as possible.
+
+    22. _____/2 The parametric equation for the plane through the points (1,0,0), (0,1,0), (0,0,0) is:
+
+    23. _____/2 If a 3x3 rotation matrix has eigenvalues 1,12+3√2i,12−3√2i, then what is the cosine of the rotation angle?
+
+    24. _____/2 This is a homogeneous 3D translation matrix: ⎛⎝⎜⎜⎜2000020000202342⎞⎠⎟⎟⎟. Use it to translate the homogeneous point (2,2,2,2) and tell me the Cartesian equivalent of the result.
+
+    25. _____/2 In the OpenGL pipeline, the Primitive Assembler does what? 
+
+    26. _____/(2 points) What display technology depends on the ability of an electric field to straighten out a corkscrew molecule?
+
+    27. _____/2 Why can the following not possibly be a 3D Cartesian rotation matrix?
+⎛⎝⎜110000001⎞⎠⎟
+
+    28. _____/2 If a=(1,2,3) then write (a⋅p)a as a matrix M, depending only on a, times p.
+
+    29. _____/2 Can the volume of a small cube change when its vertices are rotated? (yes or no). Why (not)?
+
+    30. _____/2 What does this do:
+        glutDisplayFunc(display)
+
+    31. _____/2 One problem with putting all your vertices into an array is that each vertex might be a member of a variable containing other info, such as this:
+
+        Class Vert {
+        public:
+        float coords[3];
+        float color[4];
+        float normal[3];
+        }
+        Vert verts[10];
+
+        Therefore the coordinates of successive vertices are not adjacent. How can you tell OpenGL about that when using a vertex array? You don't need to give the precise syntax in you can describe the idea or give the key word describing this.
+
+    32. _____/2 What does glFlush do?
+
+    33. _____/2 Use the vector formulation or your intuition to rotate the point (0,2,2) by 60 degrees about the axis (0,1,1).
+
+    34. _____/2 What's the dot product of these 2 vectors: (1,2,3), (4,5,6)?
+
+    35. _____/2 When are glPushMatrix() and glPopMatrix() useful?
+
+    36. _____/2 What feature in OpenGL is used to display the closest object when several objects overlap the same pixel?
+
+    37. _____/2 Consider this sequence of calls:
+
+        glColor3f(1.,1.,1.);
+        glColor3f(0.,1.,0.);\
+        glVertex3f(1.,1.,1.);
+        glVertex3f(2.,2.,2.);
+
+            What color is the vertex (1,1,1)?
+            What color is the vertex (2,2,2)? 
+
+    38. _____/2 Why do we like to group different physical input devices into the same logical input device?
+
+    39. _____/2 Here's how picking might have been implemented: When you pick an object, the line number of the glBegin call to draw the closest object covering that pixel might be returned by the pick routine.
+    Why would this idea be inadequate?
+
+    40. _____/2 What's the quaternion representing a rotation of 180 degrees about the axis (1,0,0)?
+
+    41. _____/2 What 3 simpler operations would you combine to rotate an object by 90 degrees around the point (1,2,3) about the axis (1,0,0)? That is, the axis does not go through the origin, but goes through the point (1,2,3).
+
+    42. _____/2 When rendering a triangle, you are given various properties at each vertex, and then need to interpolate them at each pixel inside the triangle. One such property is position. Name two other properties.
+
+    43. _____/2 Here is a 3D homogeneous point: (1,2,3,4). What Cartesian point does it correspond to?
+
+    44. _____/2 Give the 4x4 homogeneous matrix for a rotation by 90 degrees about the Z axis.
+
+    45. _____/2 Suppose that you're writing a spacewar game, where there are 10000 asteroids that your spacecraft might hit. (To make this question simple) The asteroids are not moving. Repeatedly testing for a collision between your spacecraft and each asteroid is too slow. How can you make this faster (w/o using faster hardware)?
+
+    46. _____/(2 points) What does the following code do:
+
+
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glFrustum(-5.0, 5.0, -5.0, 5.0, 5.0, 100.0);
+        glOrtho(-5.0, 5.0, -5.0, 5.0, 5.0, 100.0);
+
+    47. _____/(2 points) What display technology depends on the ability of an electric field to straighten out a corkscrew molecule?
+
+    48. _____/2 Why can the following not possibly be a 3D Cartesian rotation matrix?
+    ⎛⎝⎜110000001⎞⎠⎟
+
+    49. _____/2 If a=(1,2,3) then write (a⋅p)a as a matrix M, depending only on a, times p.
+
+    50. _____/2 Can the volume of a small cube change when its vertices are rotated? (yes or no). Why (not)?
+
+    51. _____/2 Why does OpenGL contain primitives, like triangle fans, that are not necessary (since you could draw the triangles separately)?
+
+    52. _____/2 Why do we consider color to have three dimensions, such as RGB? There are an infinite number of visible wavelengths.
+
+    53. _____/2 What is the event loop?
+
+    54. _____/2 What is it about how display lists are constructed that prevents you from creating an infinite loop, where list 3 might call list 4 and list 4 calls list 3?
+
+    55. _____/2 Since the routine specified in glutDisplayFunc takes no arguments, how do you get data from other routines to it?
+
+    56. _____/2 Give one disadvantage of standards.
+
+    57. _____/2 What's the dot product of these 2 vectors: (1,2,3), (4,5,6)?
+
+    58. _____/2 One property of a well designed font is that different characters may have different widths. E.g., m is wider than i. This could be a problem when writing a character string in OpenGL since you'd have to know the width of each character and advance the raster position the correct amount after drawing each character. However OpenGL makes things easy for you. How?
+
+    59. _____/2 What would look different in the resulting image if you changed the 1.0 to -1.0 in the following line?
+    gluLookAt(camera.getZoomDistance() * sin(camera.getViewDirection()*PI/180.0), 0.0, camera.getZoomDistance() * cos(camera.getViewDirection()*PI/180.0), 0.0, 0.0, 0.0, 0.0, 1.0 , 0.0);
+
+    60. _____/2 What feature in OpenGL is used to display the closest object when several objects overlap the same pixel?
+
+    61. _____/2 Give the 4x4 matrix for a 180 degree rotation about the Z axis followed by a translation by (0,0,4).
+
+    62. _____/2 Since the Z buffer looks so useful, why is it not enabled by default? Give 2 reasons.
+
+    63. _____/2 When OpenGL calls a mouse or keyboard callback routine, there is a small problem with the cursor coordinates that OpenGL passes to the routine, if you wish to use the cursor location to draw something. What is this problem?
+
+    64. _____/2 Assume that you have a model coordinate space with corners (0,100) and (300,200). You wish to map points in it to a rectangular window with corners (0,0) and (2,1). The center of the model coordinate space must map to the center of the window. X and Y must scale the same. The model coordinate space must touch the opposite sides of the window in one direction (x or y) and be inside the borders of the window in the other direction (y or x).
+    Compute what the transformations for X and Y should be, in this form:
+    X' = s X + dx
+    Y' = s Y + dy
+    I.e., tell me what s, dx, and dy are.
+
+    65. _____/2 If you call glutCreateWindow a second time in the program, which one of the following happens?
+
+        a new window replaces the old one
+        a new window is created, and the old one still remains
+        nothing happens
+        an error message is printed and the program exits
+        the computer executes the HCF (halt and catch fire) machine instruction. 
+
