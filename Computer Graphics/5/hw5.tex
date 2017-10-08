@@ -1,0 +1,378 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Assignment\ \#4} % Assignment title
+\newcommand{\hmwkDueDate}{Monday,\ October\ 2,\ 2017} % Due date
+\newcommand{\hmwkClass}{CSCI\ 6964} % Course/class
+\newcommand{\hmwkClassTime}{4:00pm} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Franklin} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Clayton Rayment} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    Put the following in the correct order for the graphics pipeline:\\
+    fragment-shader primitive-assembly rasterizer vertex-shader\\
+    \problemAnswer{ % Answer
+        The graphics pipeline is: Vertex Shader, Primitive-Assembly, Rasterizer, Fragment Shader.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    If you wanted to read some user input and then change all the vertex positions by multiplying each x-coordinate by some amount, the most efficient (in machine time) place to do it is where?\\
+    \problemAnswer{ % Answer
+        The most efficient place to do this operation is in the Vertex Shader.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    Why does OpenGL have the triangle-strip object type, in addition to the triangle type?\\
+    \problemAnswer{ % Answer
+        The triangle strip allows for smaller, faster, more efficient memory usage.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    Standards do what?\\
+    \problemAnswer{ % Answer
+        Standards allow for different types of hardware to be substituted in because hardware manufacturers are responsible for implementing said standards if they wish their hardware to sell well.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    What is the physical principle underlying LCD?\\
+    \problemAnswer{ % Answer
+        A solution of corkscrew shaped molecules can rotate polarized light.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 6
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    What is the physical principle underlying the CRT?\\
+    \problemAnswer{ % Answer
+        Firing an energetic electron at a rare earth atom causes a photon of light to be emitted.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 7
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    Which of Philo T Farnsworth's chores as a kid gave him an idea for electronic television?\\
+    \problemAnswer{ % Answer
+        Farnsworth came up with the idea of the electronic television after looking at a field of hay that had been cut in alternating directions.\\
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 8
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    Color printing on a sheet of paper exemplifies what?\\
+    \problemAnswer{ % Answer
+        Color printing on a sheet of paper exemplifies additive color.
+    }
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 9
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    Major components of the OpenGl model as discussed in class are what?\\
+    \problemAnswer{ % Answer
+        The major components are Objects, Viewer, Light sources, and Material attributes.
+    }
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 10
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    How do you draw a pentagon in WebGL?\\
+    \problemAnswer{ % Answer
+        You draw a pentagon in WebGL by splitting it into triangles first.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 11
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    If you want your javascript program to send a color for each vertex to the vertex shader, what type of variable would the color be?\\
+    \problemAnswer{ % Answer
+        To send a color for each vertex, rather than a color for every vertex, one would have to use the attribute variable type.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 12
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    The carpet is an example of what?\\
+    \problemAnswer{ % Answer
+        Carpet is an example of diffuse reflection (and an example of how RPI saves money).
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 13
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    In the OpenGL pipeline, the Primitive Assembler does what?\\
+    \problemAnswer{ % Answer
+        The Primitive Assembler creates lines and polygons from vertices. 
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 14
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    If you do not tell WebGL to do hidden surface removal, and two objects overlap the same pixel, then what color is that pixel?\\
+    \problemAnswer{ % Answer
+        It is the color of the last object to be drawn there.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 15
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    gasket2 has this code: var points=[ ]; ... points.push(a,b,c); What does push do here?\\
+    \problemAnswer{ % Answer
+        Push inserts new entries at the start of points.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 16
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    Look at this CIE chromaticity diagram. If you wanted to make white by mixing one spectrally pure color with the pure color with wavelength 600 nm, what wavelength would that other color be?\\
+    \problemAnswer{ % Answer
+        You would have to mix the pure color with wavelength 600nm with a pure color of approximately 485nm.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 17
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    Sometimes you want to send a variable to a vertex shader that has the same value for every vertex. Pick the following item for which this would be useful.\\
+    \problemAnswer{ % Answer
+        In this case you would most likely be sending the location of the global light source.
+    }
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 18
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+    You call gl.BufferSubData to do what?\\
+    \problemAnswer{ % Answer
+        You call gl.BufferSubData to add or replace part of the buffer in the GPU.
+    }
+\end{homeworkProblem}
+
+\end{document}
+
+%----------------------------------------------------------------------------------------
