@@ -9,7 +9,15 @@ Matrix Math:
 
 General Graphics:
     Graphics Pipeline
+        Vertex Shader -> Clipping -> Rasterization -> Fragment Shader
+    
     Clipping
+        Points: Not really clipped. If a point is in any way outside of the clipping volume, entire primitive is discarded.
+
+        Lines: If entire line is outside of the clipping area, entire line is discarded, otherwise line is clipped.
+
+        Triangles: A triangle is clipped to the viewing volumeby generating appropriate triangles whose vertices are on the boundary of the fclipping volume.
+    
     Color Buffers
     
 OpenGL:

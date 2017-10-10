@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+uniform vec4 rotation_var;
+void
+main()
+{
+    gl_Position = vPosition;
+
+    gl_Position.x = cos(rotation_var.z)*cos(rotation_var.y)*vPosition.x +
+                    cos(rotation_var.y)*sin(rotation_var.z)*vPosition.y -
+                    sin(rotation_var.y)*vPosition.z;
+    
+    gl_Position.y = (cos(rotation_var.z)*sin(rotation_var.x)*sin(rotation_var.y) - cos(rotation_var.x)*sin(rotation_var.z))*vPosition.x +
+                    (cos(rotation_var.x)*cos(rotation_var.z) + sin(rotation_var.x)*sin(rotation_var.z)*sin(rotation_var.y))*vPosition.y +
+                    (cos(rotation_var.y)*sin(rotation_var.x))*vPosition.z;
+    
+    gl_Position.z = (sin(rotation_var.x)*sin(rotation_var.z) + cos(rotation_var.x)*cos(rotation_var.z)*sin(rotation_var.y))*vPosition.x +
+                    (cos(rotation_var.x)*sin(rotation_var.z)*sin(rotation_var.y) - cos(rotation_var.z)*sin(rotation_var.x))*vPosition.y +
+                    (cos(rotation_var.x)*cos(rotation_var.y))*vPosition.z;
+
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+void
+main()
+{
+    
+    gl_FragColor =  vec4( 1.0, 1.0, 1.0, 0.0 );
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="./ncc17013dShaded.js"></script>
+</head>
+
+<body>
+<div>
+X-Axis Rotation Angle: <input id="xRotation" type="range"
+  min="-2" max="2" step="0.1" value="0" />
+<br>
+Y-Axis Rotation Angle: <input id="yRotation" type="range"
+  min="-2" max="2" step="0.1" value="0" />
+<br>
+Z-Axis Rotation Angle: <input id="zRotation" type="range"
+  min="-2" max="2" step="0.1" value="0" />
+</div>
+<canvas id="gl-canvas" width="512" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+</body>
+</html>
