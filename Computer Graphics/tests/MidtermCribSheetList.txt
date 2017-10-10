@@ -18,26 +18,38 @@ General Graphics:
 
         Triangles: A triangle is clipped to the viewing volumeby generating appropriate triangles whose vertices are on the boundary of the fclipping volume.
     
-    Color Buffers
+    Frame Buffer: Contains the depth, stencil, color, and accumulation buffers. These buffers can be used as the destination for rendering.
+    Color Buffers: Most important buffer, used to 
     
 OpenGL:
     Variable Types
-        (Uniform, Attribute, Etc.)
+        (Uniform, Attribute, Varying Etc.)
     OpenGL Model
-    Default Camera Location
+    Default Camera Location:
+        Camera located at origin and pointed in the negative Z direction
     OpenGL Functions
     OpenGL Primitives
+        The primative assembler divides primitives into a sequence of base primitives, and then passes them to the rasterizer to render.
 
 Javascript:
     Flatten
     Event loop
+        Since JavaScript is asynchronous, the event loop is used to decouple the caller from the response. In the event loop, the queue is polled for the next message, and when a message is encountered, the callback for that message is executed.
 
 
 Misc:
     CIE Chromaticity diagram
+        -Outer curve is the spectral locus (monochromatic)
+
     Equation of a Plane
+        -Given normal vector n(a, b, c) and points P1(x1, y1, z1) and P2(x2, y2, z2)
+        -a(x-x0)+b(y-y0)+c(z-z0) = 0
+        -ax + by + cz = d
+        -d = ax0 + by0 + cz0
+
     3D Homogeneous Points
     Display Techniques
-        LCD, CRT
+        -LCD: Uses corkscrew shaped molecules to polarize and depolarize light
+        -CRT: Uses large magnets to direct the flow of electrons onto a phosphorescent surface
     Visual Phenomenon
     
