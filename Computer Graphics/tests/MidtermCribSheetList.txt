@@ -31,6 +31,8 @@ OpenGL:
     OpenGL Primitives
         The primative assembler divides primitives into a sequence of base primitives, and then passes them to the rasterizer to render.
 
+    Picking
+
 Javascript:
     Flatten
     Event loop
