@@ -99,8 +99,8 @@
 %	NAME AND CLASS SECTION
 %----------------------------------------------------------------------------------------
 
-\newcommand{\hmwkTitle}{Assignment\ \#4} % Assignment title
-\newcommand{\hmwkDueDate}{Monday,\ October\ 2,\ 2017} % Due date
+\newcommand{\hmwkTitle}{Assignment\ \#5} % Assignment title
+\newcommand{\hmwkDueDate}{Monday,\ October\ 16,\ 2017} % Due date
 \newcommand{\hmwkClass}{CSCI\ 6964} % Course/class
 \newcommand{\hmwkClassTime}{4:00pm} % Class/lecture time
 \newcommand{\hmwkClassInstructor}{Franklin} % Teacher/lecturer
@@ -143,10 +143,15 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    Put the following in the correct order for the graphics pipeline:\\
-    fragment-shader primitive-assembly rasterizer vertex-shader\\
+    What is the angle (in degrees) between these two vectors: (1,2,0), (1,2,3)?\\
     \problemAnswer{ % Answer
-        The graphics pipeline is: Vertex Shader, Primitive-Assembly, Rasterizer, Fragment Shader.
+        \begin{align*}
+            \cos\theta &= \frac{\vec{u}\cdot\vec{v}}{\|\vec{u}\|\cdot\|\vec{v}\|}\\
+            \cos\theta &= \frac{5}{\sqrt{5}\cdot\sqrt{14}}\\
+            \cos\theta &= \frac{5}{\sqrt{70}}\\
+            \theta &= \cos^{-1}\frac{5}{\sqrt{70}}\\
+            \theta &\approx 53^\circ
+        \end{align*}
     }
 \end{homeworkProblem}
 
@@ -157,9 +162,8 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    If you wanted to read some user input and then change all the vertex positions by multiplying each x-coordinate by some amount, the most efficient (in machine time) place to do it is where?\\
+    (Reverse engineering rotations) In 2D, if the point (4,2) rotates about the origin to (2,-4), what's the angle?\\
     \problemAnswer{ % Answer
-        The most efficient place to do this operation is in the Vertex Shader.
     }
 \end{homeworkProblem}
 
@@ -170,9 +174,11 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    Why does OpenGL have the triangle-strip object type, in addition to the triangle type?\\
+    Give the matrix M that has this property: for all vectors p:
+    \begin{align*}
+        Mp = \begin{pmatrix}2\\4\\5\end{pmatrix} \times p
+    \end{align*}
     \problemAnswer{ % Answer
-        The triangle strip allows for smaller, faster, more efficient memory usage.
     }
 \end{homeworkProblem}
 
@@ -183,9 +189,11 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    Standards do what?\\
+    Give the matrix M that has this property: for all vectors p:
+    \begin{align*}
+        Mp = \left( \begin{pmatrix}2\\4\\5\end{pmatrix} \cdot p \right) \begin{pmatrix}2\\4\\5\end{pmatrix}
+    \end{align*}
     \problemAnswer{ % Answer
-        Standards allow for different types of hardware to be substituted in because hardware manufacturers are responsible for implementing said standards if they wish their hardware to sell well.
     }
 \end{homeworkProblem}
 
@@ -196,9 +204,12 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    What is the physical principle underlying LCD?\\
+    Why can the following not possibly be a 3D Cartesian rotation matrix?
+    \begin{align*}
+        \begin{pmatrix}  3& 0 &0\\1 & 0 &0\\0& 0 &1\end{pmatrix}
+    \end{align*}
     \problemAnswer{ % Answer
-        A solution of corkscrew shaped molecules can rotate polarized light.
+        The above matrix can not be a 3d cartesian rotation matrix because the determinant is zero, and to be a valid rotation matrix, the determinant must be 1.
     }
 \end{homeworkProblem}
 
@@ -209,9 +220,8 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    What is the physical principle underlying the CRT?\\
+    Use any method (not involving soliciting answers on the internet) to rotate the point (4,4,6) by 120 degrees about the axis (2,2,3). Explain your method. (E.g., if you saw the answer in a vision, are your visions generally accurate?)\\
     \problemAnswer{ % Answer
-        Firing an energetic electron at a rare earth atom causes a photon of light to be emitted.
     }
 \end{homeworkProblem}
 
@@ -222,9 +232,9 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    Which of Philo T Farnsworth's chores as a kid gave him an idea for electronic television?\\
+    Can the volume of a small cube change when its vertices are rotated? (yes or no). Why (not)?\\
     \problemAnswer{ % Answer
-        Farnsworth came up with the idea of the electronic television after looking at a field of hay that had been cut in alternating directions.\\
+        No, rotation is a uniform operation, so each vertex will be rotated by an amount proportional to how far they are away from the axis of rotation. Another way to think of this: Should you rotate the reference frame, the volume would not change, therefore, rotating the cube will not change the volume.
     }
 \end{homeworkProblem}
 
@@ -235,9 +245,9 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    Color printing on a sheet of paper exemplifies what?\\
+    What is the Event Loop?\\
     \problemAnswer{ % Answer
-        Color printing on a sheet of paper exemplifies additive color.
+        The Event Loop is a feature of JS which allows for asynchronous calls to other functions. Once a user calls a function, it is entered onto a call stack. Once the function returns, the value is given back to the user.
     }
 \end{homeworkProblem}
 
@@ -249,9 +259,9 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    Major components of the OpenGl model as discussed in class are what?\\
+    Why does putting all your vertices into an array and telling OpenGL about it make a big graphics program faster?\\
     \problemAnswer{ % Answer
-        The major components are Objects, Viewer, Light sources, and Material attributes.
+        Putting your vertices next to eachother in an array reduces cache missing because you have contiguous data. This reduces the number of miss penalties that the compute device must suffer.
     }
 \end{homeworkProblem}
 
@@ -263,9 +273,9 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    How do you draw a pentagon in WebGL?\\
+    Since the Z (aka depth) buffer looks so useful, why is it not enabled by default?\\
     \problemAnswer{ % Answer
-        You draw a pentagon in WebGL by splitting it into triangles first.
+        The depth buffer is disabled by default in order to use less resources on the compute device.
     }
 \end{homeworkProblem}
 
@@ -276,9 +286,9 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    If you want your javascript program to send a color for each vertex to the vertex shader, what type of variable would the color be?\\
+    What's the quaternion representing a rotation of 180 degrees about the axis (0,1,0)?\\
     \problemAnswer{ % Answer
-        To send a color for each vertex, rather than a color for every vertex, one would have to use the attribute variable type.
+        -1
     }
 \end{homeworkProblem}
 
@@ -289,9 +299,8 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    The carpet is an example of what?\\
+    Use the quaternion formulation to rotate the point (0,1,0) by 180 degrees about the axis (0,1,0).\\
     \problemAnswer{ % Answer
-        Carpet is an example of diffuse reflection (and an example of how RPI saves money).
     }
 \end{homeworkProblem}
 
@@ -302,9 +311,8 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    In the OpenGL pipeline, the Primitive Assembler does what?\\
+    Use the vector formulation to rotate the point (0,1,0) by 180 degrees about the axis (0,1,0).\\
     \problemAnswer{ % Answer
-        The Primitive Assembler creates lines and polygons from vertices. 
     }
 \end{homeworkProblem}
 
@@ -315,63 +323,15 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    If you do not tell WebGL to do hidden surface removal, and two objects overlap the same pixel, then what color is that pixel?\\
+    Extend your program from last week that displays the Starship Enterprise as follows:
+    \begin{enumerate}
+        \item Do the rotation in the vertex shader instead of in the javascript program.
+        \item Make the color of each pixel depend on its z-value.
+    \end{enumerate}
     \problemAnswer{ % Answer
-        It is the color of the last object to be drawn there.
     }
 \end{homeworkProblem}
 
-%----------------------------------------------------------------------------------------
-%	PROBLEM 15
-%----------------------------------------------------------------------------------------
-
-% To have just one problem per page, simply put a \clearpage after each problem
-
-\begin{homeworkProblem}
-    gasket2 has this code: var points=[ ]; ... points.push(a,b,c); What does push do here?\\
-    \problemAnswer{ % Answer
-        Push inserts new entries at the start of points.
-    }
-\end{homeworkProblem}
-
-%----------------------------------------------------------------------------------------
-%	PROBLEM 16
-%----------------------------------------------------------------------------------------
-
-% To have just one problem per page, simply put a \clearpage after each problem
-
-\begin{homeworkProblem}
-    Look at this CIE chromaticity diagram. If you wanted to make white by mixing one spectrally pure color with the pure color with wavelength 600 nm, what wavelength would that other color be?\\
-    \problemAnswer{ % Answer
-        You would have to mix the pure color with wavelength 600nm with a pure color of approximately 485nm.
-    }
-\end{homeworkProblem}
-
-%----------------------------------------------------------------------------------------
-%	PROBLEM 17
-%----------------------------------------------------------------------------------------
-
-% To have just one problem per page, simply put a \clearpage after each problem
-
-\begin{homeworkProblem}
-    Sometimes you want to send a variable to a vertex shader that has the same value for every vertex. Pick the following item for which this would be useful.\\
-    \problemAnswer{ % Answer
-        In this case you would most likely be sending the location of the global light source.
-    }
-\end{homeworkProblem}
-
-%----------------------------------------------------------------------------------------
-%	PROBLEM 18
-%----------------------------------------------------------------------------------------
-
-% To have just one problem per page, simply put a \clearpage after each problem
-
-\begin{homeworkProblem}
-    You call gl.BufferSubData to do what?\\
-    \problemAnswer{ % Answer
-        You call gl.BufferSubData to add or replace part of the buffer in the GPU.
-    }
-\end{homeworkProblem}
 
 \end{document}
 
