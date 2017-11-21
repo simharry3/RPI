@@ -99,8 +99,8 @@
 %	NAME AND CLASS SECTION
 %----------------------------------------------------------------------------------------
 
-\newcommand{\hmwkTitle}{Assignment\ \#5} % Assignment title
-\newcommand{\hmwkDueDate}{Monday,\ October\ 16,\ 2017} % Due date
+\newcommand{\hmwkTitle}{Assignment\ \#7} % Assignment title
+\newcommand{\hmwkDueDate}{Monday,\ November\ 20,\ 2017} % Due date
 \newcommand{\hmwkClass}{CSCI\ 6964} % Course/class
 \newcommand{\hmwkClassTime}{4:00pm} % Class/lecture time
 \newcommand{\hmwkClassInstructor}{Franklin} % Teacher/lecturer
@@ -143,7 +143,7 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    Look at Figures 6.37 and 6.38 on pages 310 and 311 of the textbook. Write 50-100 words on why they look different.
+    Look at Figures 6.37 and 6.38 on pages 310 and 311 of the textbook. Write 50-100 words on why they look different.\\~\\
     \problemAnswer{ % Answer
     }
 \end{homeworkProblem}
@@ -155,7 +155,7 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    Look at Figure 6.39 on page 314 of the textbook. What is it about the spheres that the global model looks different from the local?
+    Look at Figure 6.39 on page 314 of the textbook. What is it about the spheres that the global model looks different from the local?\\~\\
     \problemAnswer{ % Answer
     }
 \end{homeworkProblem}
@@ -167,8 +167,14 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    Consider the sphere $x^2+y^2+z^2=169$. What is the normal to the sphere at the point (3,12,-4)? Be sure your normal is normalized.
+    Consider the sphere $x^2+y^2+z^2=169$. What is the normal to the sphere at the point (3,12,-4)? Be sure your normal is normalized.\\~\\
     \problemAnswer{ % Answer
+    \begin{align*}
+        &F(x, y, z) = x^2 + y^2 + z^2 = 169)\\
+        \nabla &F(x, y, z) = \left(2x, 2y, 2z\right)\\
+        \nabla &F(3, 12, -4) = (6, 24, -8)\\
+        &\hat{n} = \left(\frac{3}{13}, \frac{6}{13}, \frac{-2}{13}\right)
+    \end{align*}
     }
 \end{homeworkProblem}
 
@@ -179,8 +185,20 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-     Consider a block of glass with index of refraction 1.5. Some light is shining straight down on it. This is called normal incidence. How much of the light reflects off the glass and how much transmits into the glass? Hint: Use Fresnel's law.
+     Consider a block of glass with index of refraction 1.5. Some light is shining straight down on it. This is called normal incidence. How much of the light reflects off the glass and how much transmits into the glass? Hint: Use Fresnel's law.\\~\\
     \problemAnswer{ % Answer
+    \begin{align*}
+        R &= \left[\frac{n_2 - n_1}{n_2 + n_1}\right]^2\\
+        R &= \left[\frac{1.5 - 1}{1.5 + 1}\right]^2\\
+        R &= \left[\frac{0.5}{2.5}\right]^2\\
+        R &= 0.2^2\\
+        R &= 0.04\\
+        T &= 1 - R\\
+        T &= 0.96\\
+        \\
+        R &= 4\%\\
+        T &= 96\%
+    \end{align*}
     }
 \end{homeworkProblem}
 
@@ -191,8 +209,9 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-    A small light source that is twice as far away is 1/4 as bright. That is, there is an inverse square fall off for brightness. However, when modeling light in graphics, we usually don't do that. Why?
+    A small light source that is twice as far away is 1/4 as bright. That is, there is an inverse square fall off for brightness. However, when modeling light in graphics, we usually don't do that. Why?\\~\\
     \problemAnswer{ % Answer
+        In computer graphics, we don't normally model the $\frac{1}{r^2}$ model for light, because sometimes a developer might wish to place a light source at infinite distance, which would cause zero light to reach the destination.
     }
 \end{homeworkProblem}
 
